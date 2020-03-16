@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Rocket : MonoBehaviour
 
     Rigidbody rigidBody;
     AudioSource audioSource;
+
+    enum State { Alive, Dying, Transcending };
+    State state = State.Alive;
 
     // Start is called before the first frame update
     void Start()
@@ -20,26 +24,44 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Thrust();
-        Rotate();
+        //todo somewhere stop sound on death
+        if (state == State.Alive)
+        {
+            Thrust();
+            Rotate();
+        }
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnCollisionEnter(Collision other)
     {
-        switch(other.gameObject.tag)
+        if (state != State.Alive) { return; } // ignore collisions when dead
+
+        switch (other.gameObject.tag)
         {
             case "Friendly":
                 // do nothing
-                print("OK");
                 break;
-            case "Fuel":
-                print("Fuel");
+            case "Finish":
+                state = State.Transcending;
+                Invoke("LoadNextLevel", 1f); // parameterise time
                 break;
             default:
                 // kill player
-                print("dead");
+                print("Hit something deadly");
+                state = State.Dying;
+                Invoke("LoadFirstLevel", 1f);
                 break;
         }
+    }
+
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene(1); //todo allow for more than 2 levels
+    }
+
+    private void LoadFirstLevel()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void Thrust()
@@ -48,11 +70,12 @@ public class Rocket : MonoBehaviour
         {
             rigidBody.AddRelativeForce(Vector3.up * mainThrust);
 
-            if(!audioSource.isPlaying)
+            if (!audioSource.isPlaying)
             {
                 audioSource.Play();
             }
-        } else
+        }
+        else
         {
             audioSource.Stop();
         }
