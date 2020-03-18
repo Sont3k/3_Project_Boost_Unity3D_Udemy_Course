@@ -516,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 3387608150497229798, guid: 99272ad61b2fb9b49b78f6313234f2ba,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3387608150497229798, guid: 99272ad61b2fb9b49b78f6313234f2ba,
         type: 3}
@@ -963,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 1516890610441241004, guid: d224c40aae9ef6948b9f9697562263c2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1516890610441241004, guid: d224c40aae9ef6948b9f9697562263c2,
         type: 3}
@@ -1037,7 +1037,7 @@ PrefabInstance:
     - target: {fileID: 3441643975247756182, guid: 6a55e3245d2de5a40b4882d5c4b783d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3441643975247756182, guid: 6a55e3245d2de5a40b4882d5c4b783d9,
         type: 3}
@@ -1244,7 +1244,7 @@ PrefabInstance:
     - target: {fileID: 1293069318838752012, guid: 3354066764ec70645aa7e3d485417801,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1293069318838752012, guid: 3354066764ec70645aa7e3d485417801,
         type: 3}
@@ -1265,11 +1265,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocket Ship
-      objectReference: {fileID: 0}
-    - target: {fileID: 8125657464764766209, guid: 3354066764ec70645aa7e3d485417801,
-        type: 3}
-      propertyPath: mainThrust
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3354066764ec70645aa7e3d485417801, type: 3}
@@ -1318,7 +1313,7 @@ PrefabInstance:
     - target: {fileID: 8768825835844640267, guid: 9c2eeb15d56c0614488183ee6cc54b09,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8768825835844640267, guid: 9c2eeb15d56c0614488183ee6cc54b09,
         type: 3}
